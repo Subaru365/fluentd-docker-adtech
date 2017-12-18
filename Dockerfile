@@ -4,7 +4,7 @@ LABEL maintainer="AkiraMurata <subaru.woody@gmail.com>" \
     version="0.1" \
     description="High availability fluentd image"
 
-ADD td.repo /etc/yum.repos.d/treasuredata.repo
+COPY td.repo /etc/yum.repos.d/treasuredata.repo
 
 RUN rpm --import https://packages.treasuredata.com/GPG-KEY-td-agent \
     && yum -q -y install --enablerepo=treasuredata td-agent \
